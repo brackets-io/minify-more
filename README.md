@@ -1,6 +1,6 @@
 # Minify (more) for [Brackets](https://github.com/adobe/brackets)
 
-*Originally created by Alfred Xing. This is just a small change to attempt a deeper minification, using "SIMPLE_OPTIMIZATIONS" instead of simply removing the whitespaces. Minifies JavaScript and CSS files in Brackets and saves to `{filename}.min.{ext}` using Google's Closure Compiler (for JavaScript) and YUI (for CSS).*
+*Originally created by Alfred Xing. This version attempts a deeper minification, using "SIMPLE_OPTIMIZATIONS" instead of simply removing the whitespaces. Minifies JavaScript and CSS files in Brackets and saves to `{filename}.min.{ext}` using Google's Closure Compiler (for JavaScript) and YUI (for CSS). Also fixes a couple of extra issues.*
 
 ## Installation
 
