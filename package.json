@@ -1,10 +1,10 @@
 {
-    "name": "brackets-minifier",
-    "title": "Minifier",
-    "description": "Minifies your CSS and JavaScript files with YUI and Google's Closure Compiler.",
-    "homepage": "https://github.com/alfredxing/minifier",
-    "version": "1.0.0",
-    "author": "Alfred Xing (http://alfredxing.com)",
+    "name": "brackets-minify-more",
+    "title": "Minify More",
+    "description": "Based on https://github.com/alfredxing/minifier attempts a deeper compression.",
+    "homepage": "https://github.com/Fornace/minifier/",
+    "version": "0.0.5",
+    "author": "Francesco Frapporti (http://fornacestudio.com)",
     "license": "https://github.com/alfredxing/minifier#license",
     "engines": {
         "brackets": ">=0.24.0"
