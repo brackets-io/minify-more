@@ -184,6 +184,12 @@ define(function(require, exports, module) {
 
             // Fix calc minification
             css = css.replace(/calc((.?)+(.?))/g, "calc($1 + $2)");
+            
+            // Fix calc minification when using -webkit- (produces double "((")
+            
+            css = css.replace(/calc\(\(/g, "calc(");
+            
+            console.log("css compressed");
 
             return css;
 

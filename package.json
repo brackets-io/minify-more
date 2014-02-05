@@ -1,7 +1,7 @@
 {
     "name": "brackets-minify-more",
     "title": "Minify More",
-    "description": "Based on https://github.com/alfredxing/minifier attempts a deeper compression.",
+    "description": "Attempts a deeper compression than Minifier. Do never include a single quote (') inside a comment. Breaks things badly.",
     "homepage": "https://github.com/Fornace/minifier/",
     "version": "0.0.5",
     "author": "Francesco Frapporti (http://fornacestudio.com)",
