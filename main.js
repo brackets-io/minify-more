@@ -54,7 +54,7 @@ define(function (require, exports, module) {
             lineEnding = "\r\n";
         }
         FileUtils.writeText(fileEntry, code).done(function () {
-            console.log("done");
+            console.log("compression done");
         });
     }
 

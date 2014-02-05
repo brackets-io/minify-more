@@ -33,7 +33,7 @@ define(function (require, exports, module) {
                 preservedTokens = [],
                 token = '';
 
-            // preserve strings so their content doesn't get accidentally minified
+            // preserve strings so their content doesnt get accidentally minified
             css = css.replace(/("([^\\"]|\\.|\\)*")|('([^\\']|\\.|\\)*')/g, function (match) {
                 var quote = match[0];
                 preservedTokens.push(match.slice(1, -1));
@@ -120,7 +120,7 @@ define(function (require, exports, module) {
             css = css.replace(/(:|\s)0+\.(\d+)/g, "$1.$2");
 
             // Shorten colors from rgb(51,102,153) to #336699
-            // This makes it more likely that it'll get further compressed in the next step.
+            // This makes it more likely that itll get further compressed in the next step.
             css = css.replace(/rgb\s*\(\s*([0-9,\s]+)\s*\)/gi, function () {
                 var rgbcolors = arguments[1].split(',');
                 for (var i = 0; i < rgbcolors.length; i++) {
@@ -157,7 +157,7 @@ define(function (require, exports, module) {
             css = css.replace(/[^\};\{\/]+\{\}/g, "");
 
             if (linebreakpos >= 0) {
-                // Some source control tools don't like it when files containing lines longer
+                // Some source control tools dont like it when files containing lines longer
                 // than, say 8000 characters, are checked in. The linebreak option is used in
                 // that case to split long lines after a specific column.
                 startIndex = 0;
