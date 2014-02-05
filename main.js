@@ -65,7 +65,7 @@ define(function (require, exports, module) {
             delay = setTimeout(function () { status(""); }, 1000);
         } else if (lan === "js") {
             var data = {
-                'compilation_level': 'WHITESPACE_ONLY',
+                'compilation_level': 'SIMPLE_OPTIMIZATIONS',
                 'output_format': 'text',
                 'output_info': 'compiled_code'
             };
