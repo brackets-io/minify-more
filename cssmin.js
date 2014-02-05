@@ -16,13 +16,13 @@
  * by Yahoo! Inc. under the BSD (revised) open source license.
  */
 
-define(function(require, exports, module) {
+define(function (require, exports, module) {
 
     "use strict";
 
     var CSSMin = {
 
-        go: function(css, linebreakpos) {
+        go: function (css, linebreakpos) {
 
             var startIndex = 0,
                 endIndex = 0,
@@ -34,7 +34,7 @@ define(function(require, exports, module) {
                 token = '';
 
             // preserve strings so their content doesn't get accidentally minified
-            css = css.replace(/("([^\\"]|\\.|\\)*")|('([^\\']|\\.|\\)*')/g, function(match) {
+            css = css.replace(/("([^\\"]|\\.|\\)*")|('([^\\']|\\.|\\)*')/g, function (match) {
                 var quote = match[0];
                 preservedTokens.push(match.slice(1, -1));
                 return quote + "___YUICSSMIN_PRESERVED_TOKEN_" + (preservedTokens.length - 1) + "___" + quote;
@@ -78,7 +78,7 @@ define(function(require, exports, module) {
             // Remove the spaces before the things that should not have spaces before them.
             // But, be careful not to turn "p :link {...}" into "p:link{...}"
             // Swap out any pseudo-class colons with the token, and then swap back.
-            css = css.replace(/(^|\})(([^\{:])+:)+([^\{]*\{)/g, function(m) {
+            css = css.replace(/(^|\})(([^\{:])+:)+([^\{]*\{)/g, function (m) {
                 return m.replace(":", "___YUICSSMIN_PSEUDOCLASSCOLON___");
             });
             css = css.replace(/\s+([!{};:>+\(\)\],])/g, '$1');
@@ -121,7 +121,7 @@ define(function(require, exports, module) {
 
             // Shorten colors from rgb(51,102,153) to #336699
             // This makes it more likely that it'll get further compressed in the next step.
-            css = css.replace(/rgb\s*\(\s*([0-9,\s]+)\s*\)/gi, function() {
+            css = css.replace(/rgb\s*\(\s*([0-9,\s]+)\s*\)/gi, function () {
                 var rgbcolors = arguments[1].split(',');
                 for (var i = 0; i < rgbcolors.length; i++) {
                     rgbcolors[i] = parseInt(rgbcolors[i], 10).toString(16);
@@ -139,7 +139,7 @@ define(function(require, exports, module) {
             // would become
             //     filter: chroma(color="#FFF");
             // which makes the filter break in IE.
-            css = css.replace(/([^"'=\s])(\s*)#([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])/gi, function() {
+            css = css.replace(/([^"'=\s])(\s*)#([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])/gi, function () {
                 var group = arguments;
                 if (
                     group[3].toLowerCase() === group[4].toLowerCase() &&
@@ -184,11 +184,11 @@ define(function(require, exports, module) {
 
             // Fix calc minification
             css = css.replace(/calc((.?)+(.?))/g, "calc($1 + $2)");
-            
+
             // Fix calc minification when using -webkit- (produces double "((")
-            
+
             css = css.replace(/calc\(\(/g, "calc(");
-            
+
             console.log("css compressed");
 
             return css;
