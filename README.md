@@ -1,12 +1,12 @@
-# Minifier for [Brackets](https://github.com/adobe/brackets)
+# Minify (more) for [Brackets](https://github.com/adobe/brackets)
 
-*Minifies JavaScript and CSS files in Brackets and saves to `{filename}.min.{ext}` using Google's Closure Compiler (for JavaScript) and YUI (for CSS).*
+*Originally created by Alfred Xing. This is just a small change to attempt a deeper minification, using "SIMPLE_OPTIMIZATIONS" instead of simply removing the whitespaces. Minifies JavaScript and CSS files in Brackets and saves to `{filename}.min.{ext}` using Google's Closure Compiler (for JavaScript) and YUI (for CSS).*
 
 ## Installation
 
 1. Run Brackets
 2. Select *File > Install Extension...*
-3. Enter `https://github.com/alfredxing/brackets-minifier/archive/master.zip` as Extension URL.
+3. Enter `https://github.com/Fornace/minify-more/archive/master.zip` as Extension URL.
 3. Click Install to begin downloading and installing the extension.
 
 #### Alternative method
@@ -19,8 +19,10 @@ To minify a file, use the keyboard shortcut `Cmd/Ctrl+M`. You can also minify fi
 
 `Version 0.2.0`
 
-## License
+## ORIGINAL LICENSE
 
+Copyright (C) MMXIV Fornace
+See Alfred Xing original license.
 
 Copyright (C) MMXIII Alfred Xing
 
