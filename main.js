@@ -10,6 +10,7 @@ define(function (require, exports, module) {
         DocumentManager = brackets.getModule("document/DocumentManager"),
         FileUtils = brackets.getModule("file/FileUtils"),
         NativeFileSystem = brackets.getModule("file/NativeFileSystem").NativeFileSystem,
+        FileSystem = brackets.getModule("file/FileSystem").FileSystem,
         ProjectManager = brackets.getModule("project/ProjectManager"),
         CSSMin = require("cssmin").CSSMin;
 
@@ -53,6 +54,7 @@ define(function (require, exports, module) {
         if (FileUtils.getPlatformLineEndings() === "CRLF") {
             lineEnding = "\r\n";
         }
+                
         FileUtils.writeText(fileEntry, code).done(function () {
             console.log("compression done");
         });
@@ -87,10 +89,11 @@ define(function (require, exports, module) {
                         status("");
                     }, 1000);
                 } else {
-                    status("Error Minifying");
+                    console.log("error minifying" );
+                    status("Error Minifying. Check your code for errors.");
                     delay = setTimeout(function () {
                         status("");
-                    }, 3000);
+                    }, 5000);
                 }
             });
         } else if (lan === "css") {
