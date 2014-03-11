@@ -10,7 +10,6 @@ define(function (require, exports, module) {
         DocumentManager = brackets.getModule("document/DocumentManager"),
         FileUtils = brackets.getModule("file/FileUtils"),
         NativeFileSystem = brackets.getModule("file/NativeFileSystem").NativeFileSystem,
-        FileSystem = brackets.getModule("file/FileSystem").FileSystem,
         ProjectManager = brackets.getModule("project/ProjectManager"),
         CSSMin = require("cssmin").CSSMin;
 
